@@ -1,0 +1,252 @@
+@use 'sass:color';
+
+$primary-color: rgb(69, 61, 161);
+$secondary-color: rgb(23, 189, 200);
+$tertiary-color: rgb(169, 58, 197);
+
+.flex-row-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+/* - Buttons -  */
+
+button {
+  height: fit-content;
+  border: 1px solid;
+  border-radius: 0px;
+  cursor: pointer;
+
+  &:active {
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+  &.small {
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  &.medium {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+
+  &.large {
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+
+  &.primary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: color.adjust(
+        $primary-color,
+        $lightness: -10%,
+        $space: hsl
+      );
+    }
+
+    &:active {
+      background-color: color.adjust(
+        $primary-color,
+        $lightness: -20%,
+        $space: hsl
+      );
+    }
+
+    &.ripple:hover {
+      background-color: color.adjust(
+        $primary-color,
+        $lightness: -20%,
+        $space: hsl
+      );
+      background-image: radial-gradient(
+        circle,
+        transparent 1%,
+        color.adjust($primary-color, $lightness: -10%, $space: hsl) 1%
+      );
+      background-position: center;
+      background-size: 15000%;
+      background-repeat: no-repeat;
+    }
+
+    &.ripple:active {
+      background-color: color.adjust(
+        $primary-color,
+        $lightness: -20%,
+        $space: hsl
+      );
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary-color;
+    color: white;
+
+    &:hover {
+      background-color: color.adjust(
+        $secondary-color,
+        $lightness: -10%,
+        $space: hsl
+      );
+    }
+
+    &:active {
+      background-color: color.adjust(
+        $secondary-color,
+        $lightness: -20%,
+        $space: hsl
+      );
+    }
+
+    &.ripple:hover {
+      background-color: color.adjust(
+        $secondary-color,
+        $lightness: -10%,
+        $space: hsl
+      );
+      background-image: radial-gradient(
+        circle,
+        transparent 1%,
+        color.adjust($secondary-color, $lightness: -5%, $space: hsl) 1%
+      );
+      background-position: center;
+      background-size: 15000%;
+      background-repeat: no-repeat;
+    }
+
+    &.ripple:active {
+      background-color: color.adjust(
+        $secondary-color,
+        $lightness: -10%,
+        $space: hsl
+      );
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &.tertiary {
+    background-color: $tertiary-color;
+    color: white;
+
+    &:hover {
+      background-color: color.adjust(
+        $tertiary-color,
+        $lightness: -10%,
+        $space: hsl
+      );
+    }
+
+    &:active {
+      background-color: color.adjust(
+        $tertiary-color,
+        $lightness: -20%,
+        $space: hsl
+      );
+    }
+
+    &.ripple:hover {
+      background-color: color.adjust(
+        $tertiary-color,
+        $lightness: -20%,
+        $space: hsl
+      );
+      background-image: radial-gradient(
+        circle,
+        transparent 1%,
+        color.adjust($tertiary-color, $lightness: -10%, $space: hsl) 1%
+      );
+      background-position: center;
+      background-size: 15000%;
+      background-repeat: no-repeat;
+    }
+
+    &.ripple:active {
+      background-color: color.adjust(
+        $tertiary-color,
+        $lightness: -20%,
+        $space: hsl
+      );
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &.text {
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+
+    &:hover {
+      background-color: color.adjust(white, $lightness: -5%, $space: hsl);
+    }
+
+    &:active {
+      background-color: color.adjust(white, $lightness: -10%, $space: hsl);
+    }
+
+    &.ripple:hover {
+      background-color: color.adjust(white, $lightness: -5%, $space: hsl);
+      background-image: radial-gradient(
+        circle,
+        transparent 1%,
+        color.adjust(white, $lightness: -2%, $space: hsl) 1%
+      );
+      background-position: center;
+      background-size: 15000%;
+      background-repeat: no-repeat;
+      border-color: color.adjust(white, $lightness: -5%, $space: hsl);
+    }
+
+    &.ripple:active {
+      background-color: color.adjust(white, $lightness: -5%, $space: hsl);
+      background-size: 100%;
+      transition: background 0s;
+      border-color: color.adjust(white, $lightness: -5%, $space: hsl);
+    }
+  }
+
+  &.ripple {
+    background-position: center;
+    transition: background 0.5s;
+  }
+}
+
+/* - Inputs - */
+input {
+  height: fit-content;
+  border-radius: 4px;
+  border: 1px solid black;
+
+  &:focus {
+    outline: 1px solid $primary-color;
+    border: 1px solid $primary-color;
+  }
+
+  &.small {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  &.medium {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  &.large {
+    font-size: 16px;
+    padding: 12px 12px;
+  }
+}
