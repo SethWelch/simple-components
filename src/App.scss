@@ -3,6 +3,7 @@
 $primary-color: rgb(69, 61, 161);
 $secondary-color: rgb(23, 189, 200);
 $tertiary-color: rgb(169, 58, 197);
+$boxshadow-color: lightgray;
 
 .flex-row-container {
   display: flex;
@@ -17,6 +18,14 @@ button {
   border: 1px solid;
   border-radius: 0px;
   cursor: pointer;
+
+  &.shadow {
+    box-shadow: 3px 3px 3px $boxshadow-color;
+
+    &:active {
+      box-shadow: 2px 2px 2px $boxshadow-color;
+    }
+  }
 
   &:active {
     background-size: 100%;
@@ -45,6 +54,7 @@ button {
 
   &.primary {
     background-color: $primary-color;
+    border-color: $primary-color;
     color: white;
 
     &:hover {
@@ -92,6 +102,7 @@ button {
 
   &.secondary {
     background-color: $secondary-color;
+    border-color: $secondary-color;
     color: white;
 
     &:hover {
@@ -139,6 +150,7 @@ button {
 
   &.tertiary {
     background-color: $tertiary-color;
+    border-color: $tertiary-color;
     color: white;
 
     &:hover {
@@ -248,5 +260,31 @@ input {
   &.large {
     font-size: 16px;
     padding: 12px 12px;
+  }
+
+  &.input-error {
+    border: 1px solid red;
+    color: red;
+
+    &:focus {
+      outline: 1px solid red;
+    }
+  }
+}
+
+.card {
+  border: 1px solid $primary-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px $boxshadow-color;
+
+  & > .card-header {
+    width: 100%;
+    text-align: center;
+    background-color: $primary-color;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: white;
+    font-weight: 600;
   }
 }

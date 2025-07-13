@@ -5,6 +5,7 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'text';
   label?: string;
   ripple?: boolean;
+  shadow?: boolean;
   children?: React.ReactNode | string;
   className?: string;
 }
@@ -14,6 +15,7 @@ function Button({
   variant = 'primary',
   label,
   ripple = true,
+  shadow = true,
   children,
   className,
   ...rest
@@ -24,6 +26,7 @@ function Button({
         `${variant} ${size}`,
         {
           ripple: ripple,
+          shadow: shadow,
         },
         className
       )}
